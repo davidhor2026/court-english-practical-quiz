@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>법원직 영어 실전대비 퀴즈</title>
+<style>
+:root{--blue:#2f80ed;--green:#27ae60;--red:#e74c3c;--gray:#777;--yellow:#f39c12;--line:#e5e7eb;--card:#fff;--bg:#f2f2f2;--text:#1f2937;}
+*{box-sizing:border-box}
+body{background:var(--bg);font-family:Arial,"Apple SD Gothic Neo",sans-serif;text-align:center;padding:6px;margin:0;color:var(--text)}
+.box{background:white;width:96%;max-width:900px;margin:auto;padding:28px 14px;border-radius:26px;box-shadow:0 8px 26px rgba(0,0,0,.08)}
+video{width:280px;border-radius:22px;max-width:94%;background:#000;display:block;margin:0 auto 10px;}
+button{font-size:24px;padding:15px 22px;margin:8px;border:none;border-radius:18px;background:var(--blue);color:white;cursor:pointer;width:92%;max-width:680px;text-align:left;font-weight:bold;}
+.mainBtn{text-align:center}.red{background:var(--red)}.gray{background:var(--gray)}.green{background:var(--green)}.yellow{background:var(--yellow)}
+h1{font-size:42px;margin:0 0 12px;line-height:1.25}h2{font-size:36px}.question{font-size:29px;margin-top:20px;line-height:1.75;font-weight:bold;word-break:keep-all;text-align:left;background:#fff;border-radius:18px;padding:8px}
+#speech,#speechBox{background:#fff4cc;padding:16px;border-radius:20px;margin:14px 0;font-weight:bold;font-size:24px;line-height:1.55}
+#conceptBox{background:#fff8e6;border-left:8px solid var(--yellow);padding:16px;border-radius:18px;margin:16px 0;text-align:left;font-size:23px;line-height:1.65;color:#333;font-weight:bold}
+#number,#score,#categoryText{color:#777;margin-top:10px;font-size:21px}#result{margin-top:22px;font-size:34px;font-weight:bold}#explanation,#tipBox{margin-top:20px;color:#555;line-height:1.75;font-size:24px;text-align:left;padding:16px;border-radius:18px}#explanation{background:white;border:1px solid #f0f0f0}#tipBox{background:#eef7ff;display:none}.wrongItem{text-align:left;background:#f7f7f7;margin:12px;padding:16px;border-radius:16px;line-height:1.65;font-size:21px}.givenBox{background:#fff8e6;border:2px solid #f3c66b;border-radius:16px;padding:16px;margin:18px 0;font-size:24px;line-height:1.65;font-weight:bold;color:#222;text-align:left}.passageBox{margin-top:18px;padding:14px;background:#fafafa;border-radius:16px;font-size:25px;line-height:1.8;font-weight:bold;color:#111;text-align:left}.insertMark{display:inline-block;background:#eef4ff;border:2px solid var(--blue);color:var(--blue);border-radius:10px;padding:2px 8px;margin:6px 4px;font-weight:bold}.promoText{background:#eef7ff;border:2px solid #cfe6ff;color:#1f4f82;padding:14px 16px;border-radius:18px;margin:0 0 14px;font-size:22px;line-height:1.55;font-weight:bold}.linkBtns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:0 0 18px}.linkBtns a{display:inline-block;text-decoration:none;font-size:21px;font-weight:bold;color:white;background:var(--green);padding:12px 22px;border-radius:999px;box-shadow:0 6px 14px rgba(0,0,0,.12)}#quizScreen,#finalScreen,#wrongNoteScreen{display:none}.videoControls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0 8px}.videoControls button{width:45%;max-width:330px;text-align:center;font-size:20px;padding:12px}.videoNotice{background:#fff8e6;border:1px solid #f3c66b;border-radius:14px;padding:10px;margin:8px auto 12px;max-width:680px;font-size:16px;line-height:1.45;color:#7a4b00;font-weight:bold}
+@media(max-width:600px){.box{width:98%;padding:24px 9px}video{width:320px}h1{font-size:34px}.promoText{font-size:18px;padding:12px}.linkBtns a{font-size:19px;width:92%;max-width:680px}.question{font-size:24px;line-height:1.65}button{font-size:22px;padding:14px 16px}#speech,#speechBox,#explanation,#tipBox,#conceptBox{font-size:20px}.givenBox,.passageBox{font-size:20px}.videoControls button{font-size:18px;width:46%;padding:11px 8px}.videoNotice{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>법원직 영어 실전대비 퀴즈</h1>
+<div class="promoText">법원직 영어 기출 경향을 반영한 변형 실전 퀴즈입니다.<br>조용한 수험생활을 위한 여성전용고시원 스테이The머무름도 함께 확인해 보세요.</div>
+<div class="linkBtns"><a href="https://naver.me/xv3o4qD1" target="_blank" rel="noopener noreferrer">고시원 위치 보기</a></div>
+
+<div id="startScreen">
+  <video id="startVideo" playsinline autoplay muted loop preload="auto" poster=""><source src="teacher.mp4" type="video/mp4"></video>
+  <div class="videoControls">
+    <button class="green" onclick="turnVideoSoundOn()">영상 음성 켜기</button>
+    <button class="gray" onclick="turnVideoSoundOff()">영상 음성 끄기</button>
+  </div>
+  <div class="videoNotice" id="videoNoticeStart">영상이 보이지 않으면 GitHub에 teacher.mp4, correct.mp4, wrong.mp4를 index.html과 같은 위치에 올렸는지 확인하세요.</div>
+  <div id="speech">문제 데이터를 불러오는 중입니다...</div>
+  <button class="mainBtn" onclick="startQuiz('전체')">전체 랜덤</button>
+  <button class="mainBtn" onclick="startQuiz('빈칸추론형')">빈칸추론형</button>
+  <button class="mainBtn" onclick="startQuiz('어법오류찾기')">어법 오류 찾기</button>
+  <button class="mainBtn" onclick="startQuiz('어휘·독해형')">어휘·독해형</button>
+  <button class="mainBtn" onclick="startQuiz('순서배열형')">순서배열형</button>
+  <button class="mainBtn" onclick="startQuiz('문장삽입형')">문장삽입형</button>
+  <button class="mainBtn" onclick="startQuiz('요약·주제형')">요약·주제형</button>
+  <br><button class="red mainBtn" onclick="showWrongNote()">오답노트 보기</button>
+  <button class="green mainBtn" onclick="startWrongQuiz()">오답만 다시 풀기</button>
+</div>
+
+<div id="quizScreen">
+  <video id="teacherVideo" playsinline autoplay muted loop preload="auto" poster=""><source id="videoSource" src="teacher.mp4" type="video/mp4"></video>
+  <div class="videoControls">
+    <button class="green" onclick="turnVideoSoundOn()">영상 음성 켜기</button>
+    <button class="gray" onclick="turnVideoSoundOff()">영상 음성 끄기</button>
+  </div>
+  <div class="videoNotice" id="videoNoticeQuiz">영상 음성 켜기 상태에서 정답/오답 반응 영상은 소리와 함께 재생됩니다.</div>
+  <div id="speechBox">문제를 읽고 가장 알맞은 답을 고르세요.</div>
+  <div id="categoryText"></div><div id="number"></div><div id="score"></div><div id="conceptBox"></div>
+  <div class="question" id="question"></div><div id="answerButtons"></div>
+  <button class="yellow mainBtn" onclick="toggleTip()">시험식 힌트 보기 / 숨기기</button>
+  <div id="tipBox"></div><br>
+  <button class="mainBtn" onclick="nextQuestion()">다음 문제</button>
+  <button class="gray mainBtn" onclick="goHome()">처음으로</button>
+  <div id="result"></div><div id="explanation"></div>
+</div>
+
+<div id="finalScreen">
+  <video id="finalVideo" playsinline autoplay muted loop preload="auto" poster=""><source src="correct.mp4" type="video/mp4"></video>
+  <h2>퀴즈 완료!</h2><div id="finalScore" style="font-size:32px;font-weight:bold;"></div><p id="finalMessage"></p>
+  <button class="mainBtn" onclick="goHome()">처음으로</button><button class="mainBtn" onclick="restartSameQuiz()">다시 풀기</button><button class="red mainBtn" onclick="showWrongNote()">오답노트 보기</button>
+</div>
+<div id="wrongNoteScreen"><h2>오답노트</h2><div id="wrongList"></div><button class="green mainBtn" onclick="startWrongQuiz()">오답만 다시 풀기</button><button class="red mainBtn" onclick="clearWrongNote()">오답노트 삭제</button><button class="mainBtn" onclick="goHome()">처음으로</button></div>
+</div>
+<script>
+let quizData=[], selectedQuiz=[], currentQuestion=0, score=0, answered=false, quizMode="일반";
+let videoSoundEnabled=false;
+const WRONG_NOTE_KEY="courtEnglishVideoPracticalWrongNoteV2";
+const VIDEO_FILES={teacher:'teacher.mp4',correct:'correct.mp4',wrong:'wrong.mp4'};
+window.onload=function(){loadCSVAutomatically();startMutedStartVideo();attachVideoErrorHandlers();};
+function setNotice(id,msg){const el=document.getElementById(id);if(el){el.innerHTML=msg;}}
+function attachVideoErrorHandlers(){
+  document.querySelectorAll('video').forEach(v=>{
+    v.addEventListener('error',()=>{
+      setNotice('videoNoticeStart','영상을 불러오지 못했습니다. teacher.mp4, correct.mp4, wrong.mp4 파일명과 위치를 확인하세요. 파일명은 대소문자까지 같아야 합니다.');
+      setNotice('videoNoticeQuiz','영상을 불러오지 못했습니다. mp4 파일을 index.html과 같은 GitHub 폴더에 올려 주세요.');
+    });
+  });
+}
+function turnVideoSoundOn(){
+  videoSoundEnabled=true;
+  const startVisible=document.getElementById('startScreen').style.display!=="none";
+  if(startVisible){
+    playStartTeacherWithSoundOnce();
+    setNotice('videoNoticeStart','teacher.mp4가 소리와 함께 1회 재생됩니다. 재생 후 자동으로 무음 반복됩니다.');
+  }else{
+    setNotice('videoNoticeQuiz','영상 음성이 켜졌습니다. 정답/오답 반응 영상이 소리와 함께 재생됩니다.');
+  }
+}
+function turnVideoSoundOff(){
+  videoSoundEnabled=false;
+  document.querySelectorAll('video').forEach(v=>{v.muted=true;v.volume=0;});
+  setNotice('videoNoticeStart','영상 음성이 꺼졌습니다. 영상은 무음으로 재생됩니다.');
+  setNotice('videoNoticeQuiz','영상 음성이 꺼졌습니다. 반응 영상도 무음으로 재생됩니다.');
+}
+function setVideoSource(video,file){
+  if(!video)return;
+  const current=video.getAttribute('data-current-src');
+  if(current!==file){
+    video.pause();
+    video.src=file;
+    video.setAttribute('data-current-src',file);
+    video.load();
+  }
+}
+function safePlay(v){
+  if(!v)return;
+  const p=v.play();
+  if(p && typeof p.catch==='function'){
+    p.catch(()=>{
+      v.muted=true;v.volume=0;
+      v.play().catch(()=>{});
+      setNotice('videoNoticeStart','브라우저 정책상 소리 자동재생이 차단되어 무음으로 재생합니다. 소리가 필요하면 영상 음성 켜기를 다시 눌러 주세요.');
+    });
+  }
+}
+function startMutedStartVideo(){
+  const v=document.getElementById('startVideo');if(!v)return;
+  setVideoSource(v,VIDEO_FILES.teacher);
+  v.loop=true;v.muted=true;v.volume=0;v.currentTime=0;
+  safePlay(v);
+}
+function playStartTeacherWithSoundOnce(){
+  const v=document.getElementById('startVideo');if(!v)return;
+  setVideoSource(v,VIDEO_FILES.teacher);
+  v.loop=false;v.currentTime=0;v.muted=false;v.volume=1;
+  v.onended=function(){v.onended=null;startMutedStartVideo();};
+  safePlay(v);
+}
+function setTeacherLoopMuted(){
+  const v=document.getElementById('teacherVideo');if(!v)return;
+  setVideoSource(v,VIDEO_FILES.teacher);
+  v.loop=true;v.currentTime=0;v.muted=true;v.volume=0;v.onended=null;
+  safePlay(v);
+}
+function playReaction(file){
+  const v=document.getElementById('teacherVideo');if(!v)return;
+  setVideoSource(v,file);
+  v.loop=false;v.currentTime=0;v.muted=!videoSoundEnabled;v.volume=videoSoundEnabled?1:0;
+  v.onended=function(){v.onended=null;setTeacherLoopMuted();};
+  safePlay(v);
+}
+function playFinalVideo(){
+  const v=document.getElementById('finalVideo');if(!v)return;
+  setVideoSource(v,VIDEO_FILES.correct);
+  v.loop=true;v.currentTime=0;v.muted=true;v.volume=0;
+  safePlay(v);
+}
+function fixText(t){return (t||"").replaceAll('**','______').replaceAll('self-**','self-defense');}
+function decodeBreaks(t){return fixText(t||"").replace(/\\\\n/g,'\n').replace(/\\n/g,'\n');}
+function escapeHTML(t){return (t||"").replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');}
+function toHTMLWithBreaks(t){return escapeHTML(decodeBreaks(t)).replace(/\n/g,'<br>');}
+function firstSentenceSplit(text){const m=text.match(/\.\s+/);if(!m)return [text.trim(),""];const end=m.index+1;return [text.slice(0,end).trim(),text.slice(end).trim()];}
+function formatQuestion(q){let text=decodeBreaks(q.question||"");if(q.category==='문장삽입형'){const instruction='주어진 문장이 들어가기 가장 적절한 곳을 고르시오.';const marker='[주어진 문장]';text=text.replace(instruction,'').trim();let given='',passage=text;if(text.includes(marker)){const parts=text.split(marker);const before=parts[0].trim();const after=parts.slice(1).join(marker).trim();if(before.length>0){passage=before;given=after;}else{const blocks=after.split(/\n\s*\n/).map(s=>s.trim()).filter(Boolean);if(blocks.length>=2){given=blocks[0];passage=blocks.slice(1).join('\n\n');}else{const pair=firstSentenceSplit(after);given=pair[0];passage=pair[1];}}}passage=passage.replaceAll('( [1] )','[[MARK1]]').replaceAll('( [2] )','[[MARK2]]').replaceAll('( [3] )','[[MARK3]]').replaceAll('( [4] )','[[MARK4]]');passage=toHTMLWithBreaks(passage).replaceAll('[[MARK1]]',"<span class='insertMark'>[1]</span>").replaceAll('[[MARK2]]',"<span class='insertMark'>[2]</span>").replaceAll('[[MARK3]]',"<span class='insertMark'>[3]</span>").replaceAll('[[MARK4]]',"<span class='insertMark'>[4]</span>");let html="<div><b>주어진 문장이 들어가기 가장 적절한 곳을 고르시오.</b></div>";if(given)html+="<div class='givenBox'><b>[주어진 문장]</b><br><br>"+toHTMLWithBreaks(given)+"</div>";html+="<div class='passageBox'>"+passage+"</div>";return html;}let fixed=toHTMLWithBreaks(text);fixed=fixed.replace('고르시오.','고르시오.<br><br>').replace(/\(1\)/g,'<span class="insertMark">(1)</span>').replace(/\(2\)/g,'<span class="insertMark">(2)</span>').replace(/\(3\)/g,'<span class="insertMark">(3)</span>').replace(/\(4\)/g,'<span class="insertMark">(4)</span>');return fixed;}
+function loadCSVAutomatically(){fetch('questions.csv?time='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('CSV 없음');return r.text();}).then(text=>{quizData=parseCSV(text);document.getElementById('speech').innerHTML='문제 '+quizData.length+'개를 불러왔습니다. 유형을 선택하세요.';}).catch(()=>{document.getElementById('speech').innerHTML='questions.csv 파일을 찾을 수 없습니다.<br>파일명과 위치를 확인하세요.';alert('questions.csv 로딩 실패');});}
+function parseCSVLine(line){const result=[];let current='',inQuotes=false;for(let i=0;i<line.length;i++){const c=line[i];if(c==='"'&&line[i+1]==='"'){current+='"';i++;}else if(c==='"'){inQuotes=!inQuotes;}else if(c===','&&!inQuotes){result.push(current);current='';}else{current+=c;}}result.push(current);return result;}
+function parseCSV(text){const lines=text.replace(/^\uFEFF/,'').trim().split(/\r?\n/);const data=[];for(let i=1;i<lines.length;i++){const line=lines[i].trim();if(!line)continue;const row=parseCSVLine(line);if(row.length>=12)data.push({number:row[0]||'',category:row[1]||'',concept:row[2]||'',question:fixText(row[3]||''),choice1:row[4]||'',choice2:row[5]||'',choice3:row[6]||'',choice4:row[7]||'',answer:row[8]||'',explanation:row[9]||'',translation:row[10]||'',hint:row[11]||''});}return data;}
+function shuffle(a){return a.sort(()=>Math.random()-0.5);}function startQuiz(category){if(!quizData.length){alert('문제 데이터를 아직 불러오지 못했습니다.');return;}selectedQuiz=category==='전체'?shuffle([...quizData]):shuffle(quizData.filter(q=>q.category===category));if(!selectedQuiz.length){alert('해당 유형의 문제가 없습니다.');return;}quizMode=category;currentQuestion=0;score=0;answered=false;document.getElementById('startScreen').style.display='none';document.getElementById('wrongNoteScreen').style.display='none';document.getElementById('finalScreen').style.display='none';document.getElementById('quizScreen').style.display='block';loadQuestion();}
+function loadQuestion(){let q=selectedQuiz[currentQuestion];setTeacherLoopMuted();document.getElementById('speechBox').innerHTML=q.category==='빈칸추론형'?'빈칸에 가장 알맞은 말을 고르세요.':q.category==='문장삽입형'?'문맥상 가장 자연스러운 위치를 고르세요.':q.category==='어법오류찾기'?'어법상 틀린 부분을 고르세요.':'문제를 읽고 가장 알맞은 답을 고르세요.';document.getElementById('categoryText').innerHTML='유형: '+escapeHTML(q.category);document.getElementById('number').innerHTML='문제 '+(currentQuestion+1)+' / '+selectedQuiz.length;document.getElementById('score').innerHTML='점수: '+score+' / '+selectedQuiz.length;document.getElementById('conceptBox').innerHTML=q.concept?'💡 출제 개념:<br>'+escapeHTML(q.concept):'';document.getElementById('question').innerHTML=formatQuestion(q);document.getElementById('result').innerHTML='';document.getElementById('explanation').innerHTML='';document.getElementById('tipBox').style.display='none';document.getElementById('tipBox').innerHTML='';makeAnswerButtons(q);answered=false;}
+function makeAnswerButtons(q){const area=document.getElementById('answerButtons');area.innerHTML='';['1','2','3','4'].forEach(n=>{area.innerHTML += '<button onclick="checkAnswer(\''+n+'\')">'+n+'. '+escapeHTML(q['choice'+n])+'</button>';});}
+function toggleTip(){const box=document.getElementById('tipBox'), q=selectedQuiz[currentQuestion];if(box.style.display==='block'){box.style.display='none';return;}box.style.display='block';let correct=q['choice'+q.answer]||'';box.innerHTML='<b>시험식 힌트</b><br><br>'+escapeHTML(q.hint||'힌트가 입력되지 않았습니다.')+'<br><br><b>문장 전체 해석:</b><br>'+escapeHTML(q.translation||'해석이 입력되지 않았습니다.')+'<br><br><b>핵심 정답 표현:</b><br>'+escapeHTML(correct);}
+function checkAnswer(answer){if(answered)return;answered=true;let q=selectedQuiz[currentQuestion];let correct=q['choice'+q.answer]||'';if(answer===q.answer){score++;document.getElementById('result').innerHTML='정답입니다!';playReaction(VIDEO_FILES.correct);if(quizMode==='오답노트')removeFromWrongNote(q);}else{document.getElementById('result').innerHTML='오답입니다.';playReaction(VIDEO_FILES.wrong);saveWrongQuestion(q);}document.getElementById('score').innerHTML='점수: '+score+' / '+selectedQuiz.length;document.getElementById('explanation').innerHTML='정답: '+escapeHTML(q.answer)+'. '+escapeHTML(correct)+'<br><br>해설: '+escapeHTML(q.explanation);}
+function nextQuestion(){if(!answered){alert('먼저 답을 선택하세요.');return;}if(currentQuestion===selectedQuiz.length-1){showFinalScreen();return;}currentQuestion++;loadQuestion();}
+function showFinalScreen(){document.getElementById('quizScreen').style.display='none';document.getElementById('finalScreen').style.display='block';playFinalVideo();document.getElementById('finalScore').innerHTML='최종 점수: '+score+' / '+selectedQuiz.length;let p=Math.round(score/selectedQuiz.length*100);document.getElementById('finalMessage').innerHTML=p>=90?'매우 좋습니다. 법원직 영어의 핵심 구문과 독해 흐름을 안정적으로 이해하고 있습니다.':p>=70?'좋습니다. 오답노트를 반복하면 실전 감각이 더 좋아집니다.':'오답노트를 중심으로 어법과 추론 단서를 다시 확인하는 것이 좋습니다.';}
+function restartSameQuiz(){selectedQuiz=shuffle([...selectedQuiz]);currentQuestion=0;score=0;answered=false;document.getElementById('finalScreen').style.display='none';document.getElementById('quizScreen').style.display='block';loadQuestion();}
+function saveWrongQuestion(q){let wrong=JSON.parse(localStorage.getItem(WRONG_NOTE_KEY))||[];if(!wrong.some(item=>item.question===q.question)){wrong.push(q);localStorage.setItem(WRONG_NOTE_KEY,JSON.stringify(wrong));}}
+function removeFromWrongNote(q){let wrong=JSON.parse(localStorage.getItem(WRONG_NOTE_KEY))||[];wrong=wrong.filter(item=>item.question!==q.question);localStorage.setItem(WRONG_NOTE_KEY,JSON.stringify(wrong));}
+function startWrongQuiz(){const wrong=JSON.parse(localStorage.getItem(WRONG_NOTE_KEY))||[];if(!wrong.length){alert('저장된 오답이 없습니다.');return;}selectedQuiz=shuffle([...wrong]);quizMode='오답노트';currentQuestion=0;score=0;answered=false;document.getElementById('startScreen').style.display='none';document.getElementById('wrongNoteScreen').style.display='none';document.getElementById('finalScreen').style.display='none';document.getElementById('quizScreen').style.display='block';loadQuestion();}
+function showWrongNote(){document.getElementById('startScreen').style.display='none';document.getElementById('quizScreen').style.display='none';document.getElementById('finalScreen').style.display='none';document.getElementById('wrongNoteScreen').style.display='block';let wrong=JSON.parse(localStorage.getItem(WRONG_NOTE_KEY))||[], html='';if(!wrong.length){html='<p>아직 저장된 오답이 없습니다.</p>';}else{wrong.forEach((q,i)=>{html+="<div class='wrongItem'><b>"+(i+1)+'. ['+escapeHTML(q.category)+']</b><br>';if(q.concept)html+='<b>💡 출제 개념:</b><br>'+escapeHTML(q.concept)+'<br><br>';html+=formatQuestion(q)+'<br><br>1. '+escapeHTML(q.choice1)+'<br>2. '+escapeHTML(q.choice2)+'<br>3. '+escapeHTML(q.choice3)+'<br>4. '+escapeHTML(q.choice4)+'<br><b>정답: '+escapeHTML(q.answer)+'</b><br><span style="color:#555;">'+escapeHTML(q.explanation)+'</span><br><br><b>해석:</b><br>'+escapeHTML(q.translation||'')+'<br><br><b>힌트:</b><br>'+escapeHTML(q.hint||'')+'</div>';});}document.getElementById('wrongList').innerHTML=html;}
+function clearWrongNote(){if(confirm('오답노트를 모두 삭제할까요?')){localStorage.removeItem(WRONG_NOTE_KEY);showWrongNote();}}
+function goHome(){document.getElementById('startScreen').style.display='block';document.getElementById('quizScreen').style.display='none';document.getElementById('finalScreen').style.display='none';document.getElementById('wrongNoteScreen').style.display='none';startMutedStartVideo();}
+</script>
+</body>
+</html>
