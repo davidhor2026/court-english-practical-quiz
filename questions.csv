@@ -88,7 +88,7 @@ Consumers who are dissatisfied do not always complain. ( [1] ) Some think the pr
 39,문장삽입형,문장삽입,"주어진 문장이 들어가기 가장 적절한 곳을 고르시오.
 [주어진 문장]
 The problem arises when such convenience becomes a substitute for judgment.
-Artificial intelligence can help lawyers search thousands of documents quickly. ( [1] ) It can identify patterns that might take humans many hours to notice. ( [2] ) However, legal decisions also require context, values, and responsibility. ( [3] ) A tool may assist reasoning, but it should not replace the professional duty to evaluate evidence carefully. ( [4] )",[1],[2],[3],[4],3,"AI의 편리함을 말한 뒤 그 편리함이 판단을 대체할 때 문제가 된다는 문장이 오고, 이어 법적 판단의 요소가 설명된다.",AI는 문서 검색을 도울 수 있지만 판단을 대체하면 문제가 된다.,such convenience는 앞의 빠른 검색과 패턴 식별을 받는다.
+Artificial intelligence can help lawyers search thousands of documents quickly. ( [1] ) It can identify patterns that might take humans many hours to notice. ( [2] ) However, legal decisions also require context, values, and responsibility. ( [3] ) A tool may assist reasoning, but it should not replace the professional duty to evaluate evidence carefully. ( [4] )",[1],[2],[3],[4],2,"AI의 편리함을 말한 뒤 그 편리함이 판단을 대체할 때 문제가 된다는 문장이 오고, 이어 법적 판단의 요소가 설명된다.",AI는 문서 검색을 도울 수 있지만 판단을 대체하면 문제가 된다.,such convenience는 앞의 빠른 검색과 패턴 식별을 받는다.
 40,문장삽입형,문장삽입,"주어진 문장이 들어가기 가장 적절한 곳을 고르시오.
 [주어진 문장]
 That silence can be mistaken for agreement.
